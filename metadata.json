@@ -1,0 +1,6 @@
+{
+  "name": "ThreadBack",
+  "description": "A social-impact platform helping trained NGO moderators explore possible connections between incomplete fragments of memory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

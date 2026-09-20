@@ -1,0 +1,325 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Newsreader', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Semantic Warm Palette */
+    --color-canvas: #FAF8F5;
+    --color-paper: #FFFFFF;
+    --color-surface-subtle: #F5F2EC;
+    --color-border-subtle: #EBE7DF;
+    --color-border-strong: #DCD6CC;
+    --color-ink-primary: #1C1917;
+    --color-ink-secondary: #57534E;
+    --color-ink-tertiary: #8C827A;
+    --color-amber-primary: #B45309;
+    --color-amber-accent: #D97706;
+    --color-amber-light: #FEF3C7;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #FAF8F5;
+    color: #1C1917;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #FDE68A;
+    color: #78350F;
+  }
+}
+
+.font-serif-display {
+  font-family: 'Newsreader', Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+.font-sans-ui {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-script {
+  font-family: 'Caveat', cursive, 'Newsreader', serif;
+}
+
+/* Subtle editorial paper grain overlay */
+.paper-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4DD;
+  box-shadow: 0 1px 3px 0 rgba(28, 25, 23, 0.03), 0 4px 16px -2px rgba(28, 25, 23, 0.04);
+}
+
+.paper-card-subtle {
+  background-color: #FAF8F5;
+  border: 1px solid #EBE7DF;
+}
+
+/* Unified responsive page container using available desktop viewport width (approx. 92%–95% on desktop) */
+.site-container {
+  width: 100%;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 3.5vw, 64px);
+  padding-right: clamp(20px, 3.5vw, 64px);
+}
+
+/* Custom thread stroke dash animation */
+@keyframes threadFlow {
+  0% {
+    stroke-dashoffset: 160;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-thread-flow {
+  stroke-dasharray: 8 6;
+  animation: threadFlow 3.5s linear infinite;
+}
+
+@keyframes threadFlowReverse {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 160;
+  }
+}
+
+.animate-thread-flow-reverse {
+  stroke-dasharray: 8 6;
+  animation: threadFlowReverse 3.5s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #DCD6CC;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B45309;
+}
+
+/* ========================================================================= */
+/* 2026 TACTILE INTERACTION SYSTEM                                           */
+/* ========================================================================= */
+
+/* Base smooth transition for interactive controls */
+button,
+a,
+input,
+textarea,
+select {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 180ms;
+}
+
+/* Exclude header navigation, logo, and text-only buttons from container-level button lifts and shadows */
+header nav button,
+header button.site-logo,
+[data-no-interactive] {
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  transform: none !important;
+}
+
+header nav button:hover,
+header nav button:focus,
+header nav button:active,
+header button.site-logo:hover,
+header button.site-logo:focus,
+header button.site-logo:active,
+[data-no-interactive]:hover,
+[data-no-interactive]:focus,
+[data-no-interactive]:active {
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  transform: none !important;
+}
+
+/* Global button micro-interactions (subtle lift + scale + shadow increase + pressed response) */
+button:not(:disabled):not([data-no-interactive]):not(header nav button):not(header button.site-logo),
+a[role="button"]:not([data-no-interactive]),
+.btn-tactile {
+  will-change: transform, box-shadow;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 150ms ease,
+              border-color 150ms ease,
+              color 150ms ease;
+}
+
+/* Scoped override for AI Summary page buttons: clean, subtle hover without rectangular box/shadow */
+.ai-summary-view button:hover,
+.ai-summary-view button:focus,
+.ai-summary-view button:active,
+.ai-summary-view a[role="button"]:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Primary/Secondary button lift on hover */
+button:not(:disabled):not([data-no-interactive]):not(header nav button):not(header button.site-logo):not(.ai-summary-view button):hover,
+a[role="button"]:not([data-no-interactive]):not(.ai-summary-view a):hover,
+.btn-tactile:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 16px -2px rgba(28, 25, 23, 0.12), 0 2px 4px -1px rgba(28, 25, 23, 0.06);
+}
+
+/* Primary/Secondary button pressed state on active click */
+button:not(:disabled):not([data-no-interactive]):not(header nav button):not(header button.site-logo):active,
+a[role="button"]:not([data-no-interactive]):active,
+.btn-tactile:active {
+  transform: translateY(0.5px) scale(0.985);
+  box-shadow: 0 1px 2px rgba(28, 25, 23, 0.08);
+  transition-duration: 80ms;
+}
+
+/* Interactive Card hover lift & soft depth enhancement */
+.card-interactive,
+.interactive-card {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 180ms ease-out;
+  will-change: transform, box-shadow;
+}
+
+.card-interactive:hover,
+.interactive-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -4px rgba(28, 25, 23, 0.08), 0 4px 10px -2px rgba(28, 25, 23, 0.04);
+}
+
+.card-interactive:active,
+.interactive-card:active {
+  transform: translateY(-0.5px) scale(0.995);
+  transition-duration: 90ms;
+}
+
+/* Letter Interactive & Breathing Animations */
+@keyframes gentleLetterFloat {
+  0%, 100% {
+    transform: translateY(-5px) scale(1.08);
+  }
+  50% {
+    transform: translateY(-6.5px) scale(1.09);
+  }
+}
+
+.letter-interactive {
+  display: inline-block;
+  will-change: transform, color;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 180ms ease,
+              opacity 180ms ease;
+}
+
+.letter-floating {
+  animation: gentleLetterFloat 2.4s ease-in-out infinite 200ms;
+}
+
+/* Polish input focus transitions */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="number"],
+textarea,
+select {
+  transition: border-color 180ms ease-out,
+              box-shadow 180ms ease-out,
+              background-color 180ms ease-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  transform: translateY(-0.5px);
+}
+
+/* Subtle link arrow translation micro-interaction */
+.group:hover .group-hover-translate-x {
+  transform: translateX(3px);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle modal entrance / exit transitions */
+@keyframes modalEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.97) translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes backdropFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal-animate-enter {
+  animation: modalEnter 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.backdrop-animate-fade {
+  animation: backdropFade 180ms ease-out forwards;
+}
+
+/* Respect prefers-reduced-motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}
