@@ -15,6 +15,7 @@ import { MemoryType, MemoryProfile, StructuredMemory } from '../types';
 import { extractStructuredMemory } from '../utils/memoryExtractor';
 import { DEMO_SCENARIOS, DemoScenario } from '../data/demoScenarios';
 import { InteractiveText } from './InteractiveHeadline';
+import heroLandscapeImg from '../assets/images/hero_misty_landscape.jpg';
 
 interface MemoryIntakeFormProps {
   initialType?: MemoryType;
@@ -168,7 +169,10 @@ export const MemoryIntakeForm: React.FC<MemoryIntakeFormProps> = ({
           {/* Background image: reference misty landscape */}
           <div className="absolute inset-0">
             <img
-              src="/src/assets/images/hero_misty_landscape_1789710545416.jpg"
+              src={heroLandscapeImg}
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = '/images/hero_misty_landscape.jpg';
+              }}
               alt="Misty valley and mountain landscape"
               className="w-full h-full object-cover object-[center_35%]"
             />

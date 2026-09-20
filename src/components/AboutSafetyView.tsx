@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { HumanitarianPartnershipModal } from './HumanitarianPartnershipModal';
 import { InteractiveText } from './InteractiveHeadline';
+import handsSproutImg from '../assets/images/hands_holding_sprout.jpg';
 
 interface AboutSafetyViewProps {
   onStartIntake?: () => void;
@@ -37,7 +38,10 @@ export const AboutSafetyView: React.FC<AboutSafetyViewProps> = ({
           {/* Background photograph (Hands holding seedling in morning mist) */}
           <div className="absolute inset-0 z-0">
             <img
-              src="/src/assets/images/hands_holding_sprout_1789705475092.jpg"
+              src={handsSproutImg}
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = '/images/hands_holding_sprout.jpg';
+              }}
               alt="Hands gently holding a small green seedling against misty sunlight"
               className="w-full h-full object-cover object-right md:object-[center_35%] lg:object-center"
             />

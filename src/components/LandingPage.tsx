@@ -9,6 +9,10 @@ import {
 } from 'lucide-react';
 import { MemoryType, ActiveView } from '../types';
 import { InteractiveText } from './InteractiveHeadline';
+import heroLandscapeImg from '../assets/images/hero_misty_landscape.jpg';
+import ancientTempleImg from '../assets/images/ancient_stone_temple.jpg';
+import riverValleyImg from '../assets/images/river_misty_valley.jpg';
+import youngGirlImg from '../assets/images/young_girl_sunlight.jpg';
 
 interface LandingPageProps {
   onStartIntake: (type: MemoryType) => void;
@@ -32,7 +36,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
         {/* Natural atmospheric landscape background spanning across the entire right half of hero */}
         <div className="absolute top-0 right-0 w-full lg:w-[62%] xl:w-[66%] 2xl:w-[70%] h-full pointer-events-none select-none overflow-hidden opacity-95">
           <img
-            src="/src/assets/images/hero_misty_landscape_1789710545416.jpg"
+            src={heroLandscapeImg}
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = '/images/hero_misty_landscape.jpg';
+            }}
             alt="Misty hills sunrise background"
             className="w-full h-full object-cover object-right-top filter brightness-[1.01] contrast-[0.98]"
             loading="eager"
@@ -140,7 +147,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                 <div className="absolute top-2 sm:top-4 right-20 sm:right-28 md:right-32 w-44 sm:w-52 md:w-56 lg:w-60 bg-white p-2.5 pb-3.5 sm:p-3 sm:pb-4 rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.08)] border border-[#E7E2D8] rotate-[6deg] z-15 hover:rotate-[4deg] hover:scale-105 hover:shadow-[0_16px_36px_rgba(0,0,0,0.14)] hover:z-30 transition-all duration-200 cursor-pointer">
                   <div className="w-full aspect-[4/3] overflow-hidden rounded-lg bg-[#FAF8F5]">
                     <img
-                      src="/src/assets/images/ancient_stone_temple_1789705448980.jpg"
+                      src={ancientTempleImg}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = '/images/ancient_stone_temple.jpg';
+                      }}
                       alt="Ancient stone temple near river"
                       className="w-full h-full object-cover"
                     />
@@ -151,7 +161,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                 <div className="absolute top-24 sm:top-28 left-2 sm:left-6 md:left-8 w-48 sm:w-56 md:w-60 lg:w-64 bg-white p-2.5 pb-3.5 sm:p-3 sm:pb-4 rounded-xl shadow-[0_10px_28px_rgba(0,0,0,0.10)] border border-[#E7E2D8] -rotate-[12deg] z-25 hover:-rotate-[9deg] hover:scale-105 hover:shadow-[0_18px_40px_rgba(0,0,0,0.15)] hover:z-30 transition-all duration-200 cursor-pointer">
                   <div className="w-full aspect-[4/3] overflow-hidden rounded-lg bg-[#FAF8F5]">
                     <img
-                      src="/src/assets/images/river_misty_valley_1789710560951.jpg"
+                      src={riverValleyImg}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = '/images/river_misty_valley.jpg';
+                      }}
                       alt="River curving through misty hills"
                       className="w-full h-full object-cover"
                     />
@@ -162,7 +175,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                 <div className="absolute top-44 sm:top-48 right-3 sm:right-6 md:right-8 w-44 sm:w-52 md:w-56 lg:w-60 bg-white p-2.5 pb-3.5 sm:p-3 sm:pb-4 rounded-xl shadow-[0_10px_28px_rgba(0,0,0,0.10)] border border-[#E7E2D8] rotate-[2deg] z-20 hover:rotate-[0deg] hover:scale-105 hover:shadow-[0_18px_40px_rgba(0,0,0,0.15)] hover:z-30 transition-all duration-200 cursor-pointer">
                   <div className="w-full aspect-[4/3] overflow-hidden rounded-lg bg-[#FAF8F5]">
                     <img
-                      src="/src/assets/images/young_girl_sunlight_1789705462196.jpg"
+                      src={youngGirlImg}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = '/images/young_girl_sunlight.jpg';
+                      }}
                       alt="Young girl looking towards horizon"
                       className="w-full h-full object-cover"
                     />
@@ -485,14 +501,20 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                       {/* Circular Vignette */}
                       <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full relative overflow-hidden shrink-0 shadow-xs border border-[#DFD8CA]">
                         <img
-                          src="/src/assets/images/river_misty_valley_1789710560951.jpg"
+                          src={riverValleyImg}
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = '/images/river_misty_valley.jpg';
+                          }}
                           alt="Misty valley river landscape"
                           className="w-full h-full object-cover"
                         />
                         {/* Avatar overlay inside circle */}
                         <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border-2 border-white shadow-xs z-10">
                           <img
-                            src="/src/assets/images/young_girl_sunlight_1789705462196.jpg"
+                            src={youngGirlImg}
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).src = '/images/young_girl_sunlight.jpg';
+                            }}
                             alt="Connected person"
                             className="w-full h-full object-cover"
                           />

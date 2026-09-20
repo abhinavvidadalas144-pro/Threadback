@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1376 768" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mistSky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="30%" stop-color="#F2EFE9"/>
+      <stop offset="70%" stop-color="#E5DFD3"/>
+      <stop offset="100%" stop-color="#D8CFBE"/>
+    </linearGradient>
+    <linearGradient id="morningLight" cx="65%" cy="30%" r="60%" fx="65%" fy="30%" id="sunGrad">
+      <stop offset="0%" stop-color="#FFFBEB" stop-opacity="0.9"/>
+      <stop offset="35%" stop-color="#FEF3C7" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#FDE68A" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FAF8F5" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="mist1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FAF8F5" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Canvas -->
+  <rect width="1376" height="768" fill="url(#mistSky)"/>
+
+  <!-- Sun Glow -->
+  <circle cx="950" cy="220" r="280" fill="url(#sunGrad)"/>
+
+  <!-- Distant mountains -->
+  <path d="M400 420 Q 700 280, 1050 360 T 1376 310 L 1376 768 L 400 768 Z" fill="#B8ADA0" opacity="0.35"/>
+  <path d="M200 480 Q 600 360, 980 430 T 1376 390 L 1376 768 L 200 768 Z" fill="#9C9082" opacity="0.45"/>
+
+  <!-- Gentle hills with pine tree silhouettes -->
+  <path d="M0 540 Q 450 430, 850 510 T 1376 460 L 1376 768 L 0 768 Z" fill="#756A5E" opacity="0.6"/>
+  <path d="M0 620 C 350 550, 750 630, 1376 560 L 1376 768 L 0 768 Z" fill="#52483E" opacity="0.75"/>
+
+  <!-- Winding distant river catching light -->
+  <path d="M680 500 C 740 540, 820 560, 770 600 C 710 650, 600 680, 720 730 C 780 750, 850 768, 900 768 L 1100 768 C 960 720, 860 670, 920 620 C 980 570, 920 530, 820 500 Z" fill="#115E59" opacity="0.55"/>
+
+  <!-- Foreground mist bands -->
+  <rect x="0" y="380" width="1376" height="120" fill="url(#mist1)"/>
+  <rect x="0" y="520" width="1376" height="150" fill="url(#mist1)"/>
+</svg>

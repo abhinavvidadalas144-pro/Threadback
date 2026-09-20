@@ -11,6 +11,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { ActiveView } from '../types';
+import moderatorAvatarImg from '../assets/images/moderator_avatar.jpg';
 
 interface HeaderProps {
   activeView: ActiveView;
@@ -170,7 +171,10 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <div className="w-6 h-6 rounded-full overflow-hidden border border-[#D6D0C4] bg-[#E7E2D8] shrink-0">
               <img
-                src="/src/assets/images/moderator_avatar_1789719366175.jpg"
+                src={moderatorAvatarImg}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/images/moderator_avatar.jpg';
+                }}
                 alt="Moderator avatar"
                 className="w-full h-full object-cover"
               />
@@ -229,7 +233,10 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <div className="w-6 h-6 rounded-full overflow-hidden border border-[#D6D0C4]">
               <img
-                src="/src/assets/images/moderator_avatar_1789719366175.jpg"
+                src={moderatorAvatarImg}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/images/moderator_avatar.jpg';
+                }}
                 alt="Moderator avatar"
                 className="w-full h-full object-cover"
               />

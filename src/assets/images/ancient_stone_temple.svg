@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2DAC9"/>
+      <stop offset="45%" stop-color="#EFE8DA"/>
+      <stop offset="85%" stop-color="#F7F3EB"/>
+      <stop offset="100%" stop-color="#FAF8F5"/>
+    </linearGradient>
+    <linearGradient id="sunGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#FCD34D" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="riverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E7490" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#065F46" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#115E59" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="hillFar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C2B8A3"/>
+      <stop offset="100%" stop-color="#DDD5C5"/>
+    </linearGradient>
+    <linearGradient id="hillMid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8F8574"/>
+      <stop offset="100%" stop-color="#ADA494"/>
+    </linearGradient>
+    <linearGradient id="hillNear" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#57534E"/>
+      <stop offset="100%" stop-color="#78716C"/>
+    </linearGradient>
+    <linearGradient id="stoneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#44403C"/>
+      <stop offset="50%" stop-color="#292524"/>
+      <stop offset="100%" stop-color="#1C1917"/>
+    </linearGradient>
+    <linearGradient id="mistLayer" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#FAF8F5" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="1200" height="900" fill="url(#skyGrad)"/>
+
+  <!-- Warm morning sun disc behind misty atmosphere -->
+  <circle cx="780" cy="280" r="160" fill="url(#sunGlow)"/>
+  <circle cx="780" cy="280" r="70" fill="#FEF3C7" opacity="0.85"/>
+
+  <!-- Distant mountain ridges -->
+  <path d="M0 450 Q 280 320, 600 410 T 1200 370 L 1200 900 L 0 900 Z" fill="url(#hillFar)" opacity="0.6"/>
+  <path d="M0 500 Q 350 380, 750 480 T 1200 440 L 1200 900 L 0 900 Z" fill="url(#hillMid)" opacity="0.7"/>
+
+  <!-- Winding misty river -->
+  <path d="M420 530 C 520 550, 680 570, 630 630 C 570 700, 320 680, 260 760 C 200 840, 360 900, 480 900 L 780 900 C 650 820, 580 770, 720 710 C 840 660, 780 580, 560 540 Z" fill="url(#riverGrad)" opacity="0.75"/>
+
+  <!-- Midground wooded hillside on left -->
+  <path d="M0 580 Q 240 520, 420 640 T 0 880 Z" fill="url(#hillNear)" opacity="0.85"/>
+
+  <!-- Promontory hill holding the ancient temple on the right -->
+  <path d="M520 900 C 680 720, 780 520, 1040 520 C 1140 520, 1200 560, 1200 900 Z" fill="url(#hillNear)"/>
+
+  <!-- Ancient Stone Pagoda / Temple Silhouette on the hill -->
+  <g transform="translate(860, 310) scale(1.15)">
+    <!-- Base tier stone plinth -->
+    <rect x="70" y="180" width="100" height="25" rx="3" fill="url(#stoneGrad)"/>
+    <rect x="80" y="160" width="80" height="22" rx="2" fill="url(#stoneGrad)"/>
+    
+    <!-- Tier 1 -->
+    <rect x="90" y="130" width="60" height="32" fill="url(#stoneGrad)"/>
+    <path d="M72 132 C 85 130, 105 125, 120 125 C 135 125, 155 130, 168 132 C 172 126, 165 122, 145 120 C 130 119, 110 119, 95 120 C 75 122, 68 126, 72 132 Z" fill="#292524"/>
+
+    <!-- Tier 2 -->
+    <rect x="95" y="98" width="50" height="24" fill="url(#stoneGrad)"/>
+    <path d="M80 100 C 92 98, 108 94, 120 94 C 132 94, 148 98, 160 100 C 164 95, 156 92, 140 90 C 128 89, 112 89, 100 90 C 84 92, 76 95, 80 100 Z" fill="#292524"/>
+
+    <!-- Tier 3 -->
+    <rect x="100" y="74" width="40" height="18" fill="url(#stoneGrad)"/>
+    <path d="M88 76 C 98 74, 110 71, 120 71 C 130 71, 142 74, 152 76 C 155 72, 148 69, 136 67 C 126 66, 114 66, 104 67 C 92 69, 85 72, 88 76 Z" fill="#292524"/>
+
+    <!-- Spire / Finial -->
+    <polygon points="120,38 116,68 124,68" fill="#1C1917"/>
+    <circle cx="120" cy="38" r="4" fill="#C26A18"/>
+  </g>
+
+  <!-- Atmospheric mist wash across ground and water -->
+  <rect y="400" width="1200" height="500" fill="url(#mistLayer)"/>
+
+  <!-- Soft organic vignettes and memory grain border -->
+  <rect width="1200" height="900" fill="none" stroke="#E7E2D8" stroke-width="4"/>
+</svg>

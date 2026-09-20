@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="warmSunSky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="35%" stop-color="#FED7AA"/>
+      <stop offset="70%" stop-color="#E0D7C6"/>
+      <stop offset="100%" stop-color="#FAF8F5"/>
+    </linearGradient>
+    <radialGradient id="sunBurst" cx="75%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#FFFBEB" stop-opacity="0.95"/>
+      <stop offset="25%" stop-color="#FDE68A" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="#F59E0B" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FAF8F5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="personSilhouette" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3F3F46"/>
+      <stop offset="50%" stop-color="#27272A"/>
+      <stop offset="100%" stop-color="#18181B"/>
+    </linearGradient>
+    <linearGradient id="goldenRim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0"/>
+      <stop offset="85%" stop-color="#FDE68A" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFFBEB" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="warmMeadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78716C"/>
+      <stop offset="100%" stop-color="#44403C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Golden warm dawn sky -->
+  <rect width="1200" height="900" fill="url(#warmSunSky)"/>
+  <rect width="1200" height="900" fill="url(#sunBurst)"/>
+
+  <!-- Distant mountain silhouette -->
+  <path d="M0 500 Q 300 420, 600 460 T 1200 410 L 1200 900 L 0 900 Z" fill="#A8A29E" opacity="0.4"/>
+  <path d="M0 560 Q 400 490, 800 530 T 1200 490 L 1200 900 L 0 900 Z" fill="#78716C" opacity="0.6"/>
+
+  <!-- Foreground hillside meadow -->
+  <path d="M0 640 C 350 610, 600 680, 1200 620 L 1200 900 L 0 900 Z" fill="url(#warmMeadow)"/>
+
+  <!-- Young person / girl silhouette facing right toward the sunrise horizon (anonymized, poetic) -->
+  <g transform="translate(240, 310) scale(1.1)">
+    <!-- Back / Shoulders / Dress -->
+    <path d="M120 450 C 130 360, 160 300, 210 260 C 235 240, 260 230, 290 235 C 315 240, 340 260, 360 290 C 380 325, 395 380, 420 450 Z" fill="url(#personSilhouette)"/>
+
+    <!-- Neck -->
+    <path d="M265 240 L 265 195 C 275 195, 290 195, 295 240 Z" fill="url(#personSilhouette)"/>
+
+    <!-- Head Profile looking right -->
+    <path d="M240 160 C 235 115, 260 70, 305 70 C 345 70, 365 105, 360 145 C 355 160, 345 175, 335 185 C 320 195, 300 200, 275 198 C 255 195, 245 180, 240 160 Z" fill="url(#personSilhouette)"/>
+
+    <!-- Nose / Chin profile pointing toward morning sun -->
+    <path d="M350 120 C 358 122, 364 126, 362 132 C 360 136, 355 138, 352 142 C 354 146, 352 152, 344 156 Z" fill="url(#personSilhouette)"/>
+
+    <!-- Flowing hair in gentle breeze -->
+    <path d="M245 100 C 215 120, 185 160, 175 220 C 205 200, 230 190, 255 185 Z" fill="#18181B"/>
+    <path d="M235 120 C 195 150, 170 200, 155 260 C 185 240, 215 225, 240 215 Z" fill="#27272A"/>
+
+    <!-- Golden morning sunlight edge highlight along profile -->
+    <path d="M315 72 C 345 74, 364 105, 361 144 C 357 165, 350 185, 335 200" stroke="#FEF08A" stroke-width="4" fill="none" opacity="0.85"/>
+  </g>
+
+  <!-- Tall grass and wild seed heads in foreground catching light -->
+  <g stroke="#D6D3D1" stroke-width="2" opacity="0.6">
+    <line x1="150" y1="880" x2="160" y2="760"/>
+    <line x1="220" y1="900" x2="240" y2="790"/>
+    <line x1="560" y1="900" x2="575" y2="740"/>
+    <line x1="720" y1="890" x2="740" y2="780"/>
+    <line x1="940" y1="900" x2="930" y2="760"/>
+    <line x1="1080" y1="900" x2="1100" y2="800"/>
+  </g>
+
+  <!-- Framing border -->
+  <rect width="1200" height="900" fill="none" stroke="#E7E2D8" stroke-width="4"/>
+</svg>

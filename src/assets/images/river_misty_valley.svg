@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="valleySky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DCE4DF"/>
+      <stop offset="50%" stop-color="#E9EFE9"/>
+      <stop offset="100%" stop-color="#FAF8F5"/>
+    </linearGradient>
+    <linearGradient id="waterFlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E7490"/>
+      <stop offset="40%" stop-color="#115E59"/>
+      <stop offset="80%" stop-color="#134E4A"/>
+      <stop offset="100%" stop-color="#042F2E"/>
+    </linearGradient>
+    <linearGradient id="waterHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#5EEAD4" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="ridge1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7C9287"/>
+      <stop offset="100%" stop-color="#9FB2A8"/>
+    </linearGradient>
+    <linearGradient id="ridge2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4C6357"/>
+      <stop offset="100%" stop-color="#678073"/>
+    </linearGradient>
+    <linearGradient id="ridge3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D4338"/>
+      <stop offset="100%" stop-color="#3D5649"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="900" fill="url(#valleySky)"/>
+
+  <!-- Morning Sun haze -->
+  <ellipse cx="420" cy="240" rx="140" ry="100" fill="#FEF3C7" opacity="0.6" filter="blur(20px)"/>
+
+  <!-- Back mountain range -->
+  <path d="M0 380 Q 300 280, 620 340 T 1200 310 L 1200 900 L 0 900 Z" fill="url(#ridge1)" opacity="0.75"/>
+
+  <!-- Middle hills with lush forest contour -->
+  <path d="M0 450 Q 250 360, 520 420 T 1000 400 Q 1120 430, 1200 460 L 1200 900 L 0 900 Z" fill="url(#ridge2)" opacity="0.85"/>
+
+  <!-- Foreground valley flanking ridges -->
+  <path d="M0 520 C 180 480, 360 550, 480 620 C 320 740, 140 820, 0 900 Z" fill="url(#ridge3)"/>
+  <path d="M1200 500 C 1020 480, 840 560, 720 630 C 860 740, 1060 820, 1200 900 Z" fill="url(#ridge3)"/>
+
+  <!-- Winding river carving through the valley -->
+  <path d="M530 420 C 580 460, 640 500, 580 540 C 510 590, 430 610, 480 670 C 540 750, 740 760, 660 830 C 600 880, 520 900, 460 900 L 780 900 C 860 850, 920 780, 820 710 C 720 640, 680 580, 720 530 C 760 480, 710 440, 620 420 Z" fill="url(#waterFlow)"/>
+
+  <!-- Light reflections on river current -->
+  <path d="M560 470 Q 610 500, 570 530" stroke="url(#waterHighlight)" stroke-width="4" fill="none" opacity="0.8"/>
+  <path d="M490 620 Q 530 660, 580 680" stroke="url(#waterHighlight)" stroke-width="6" fill="none" opacity="0.8"/>
+  <path d="M620 750 Q 720 780, 670 820" stroke="url(#waterHighlight)" stroke-width="8" fill="none" opacity="0.8"/>
+
+  <!-- Atmospheric mist ribbons in valley -->
+  <path d="M200 480 Q 600 430, 1000 470 Q 600 510, 200 480 Z" fill="#FAF8F5" opacity="0.45"/>
+  <path d="M320 620 Q 650 580, 950 630 Q 620 660, 320 620 Z" fill="#FAF8F5" opacity="0.35"/>
+
+  <!-- Fine framing outline -->
+  <rect width="1200" height="900" fill="none" stroke="#E7E2D8" stroke-width="4"/>
+</svg>
